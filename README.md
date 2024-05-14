@@ -23,3 +23,14 @@
 #### Migrate
 
 `php artisan migrate`
+
+#### Create Translation
+`yourdomain.com/translaflex/create`
+
+![Create Translation](images/add-translation.png)
+
+#### Usages
+`__('message.wellcome_to_the_site')`
+
+#### Result
+![Create Translation](images/welcome.png)
