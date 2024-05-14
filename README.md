@@ -18,7 +18,7 @@
 
 #### Publish
 
-`php artisan laraflex:publish`
+`php artisan translaflex:publish`
 
 #### Migrate
 
