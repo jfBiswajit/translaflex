@@ -1,6 +1,6 @@
 {
   "name": "jfbiswajit/translaflex",
-  "description": "Effortlessly translate your site.",
+  "description": "Effortlessly translate your Laravel application.",
   "version": "1.0.0",
   "type": "library",
   "license": "MIT",

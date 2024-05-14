@@ -1,5 +1,7 @@
 # TranslaFlex
 
+Effortlessly translate your Laravel application.
+
 #### composer.json
 
 ```
