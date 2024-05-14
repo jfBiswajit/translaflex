@@ -1,0 +1,30 @@
+{
+  "name": "jfbiswajit/translaflex",
+  "description": "Effortlessly translate your site.",
+  "version": "1.0.0",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Biswajit Biswas",
+      "email": "jfbiswajit@gmail.com"
+    }
+  ],
+  "require": {
+    "spatie/laravel-translation-loader": "^2.8",
+    "livewire/livewire": "^3.4",
+    "jantinnerezo/livewire-alert": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "JfBiswajit\\TranslaFlex\\": "src"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "JfBiswajit\\TranslaFlex\\TranslaFlexServiceProvider"
+      ]
+    }
+  }
+}
