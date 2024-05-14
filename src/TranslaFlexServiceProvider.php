@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 use JfBiswajit\TranslaFlex\Console\Command\PublishTranslaFlex;
 use JfBiswajit\TranslaFlex\Livewire\Translations\CreateTranslationComponent;
 use Livewire\Livewire;
+use Illuminate\Support\Facades\App;
+
 
 class TranslaFlexServiceProvider extends ServiceProvider
 {
@@ -15,12 +17,14 @@ class TranslaFlexServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'translaflex');
-        Livewire::component('tanslaflex::create-translation', CreateTranslationComponent::class);
+        if (App::isLocal()) {
+            $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
+            Livewire::component('tanslaflex::create-translation', CreateTranslationComponent::class);
+            $this->loadViewsFrom(__DIR__ . '/../resources/views', 'translaflex');
 
-        if ($this->app->runningInConsole()) {
-            $this->commands(PublishTranslaFlex::class);
+            if ($this->app->runningInConsole()) {
+                $this->commands(PublishTranslaFlex::class);
+            }
         }
     }
 }
