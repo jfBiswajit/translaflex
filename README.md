@@ -18,9 +18,13 @@ Effortlessly translate your Laravel application.
 
 `composer require jfBiswajit/translaflex`
 
-#### Publish
+#### Publish (Required)
 
 `php artisan translaflex:publish`
+
+#### Publish TranslaFlex Config (Optional)
+
+`php artisan vendor:publish --provider="JfBiswajit\TranslaFlex\TranslaFlexServiceProvider" --tag="config"`
 
 #### Migrate
 
