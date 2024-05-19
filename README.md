@@ -29,10 +29,10 @@ Effortlessly translate your Laravel application.
 #### Create Translation
 `yourdomain.com/translaflex/create`
 
-![Create Translation](images/add-translation.png)
+![Create Translation](art/add-translation.png)
 
 #### Usages
 `__('message.wellcome_to_the_site')`
 
 #### Result
-![Create Translation](images/welcome.png)
+![Create Translation](art/welcome.png)

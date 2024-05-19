@@ -17,14 +17,20 @@ class TranslaFlexServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        if (App::isLocal()) {
-            $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
-            Livewire::component('tanslaflex::create-translation', CreateTranslationComponent::class);
-            $this->loadViewsFrom(__DIR__ . '/../resources/views', 'translaflex');
+        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
+        Livewire::component('tanslaflex::create-translation', CreateTranslationComponent::class);
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'translaflex');
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'translaflex');
 
-            if ($this->app->runningInConsole()) {
-                $this->commands(PublishTranslaFlex::class);
-            }
+
+        if ($this->app->runningInConsole()) {
+            // !REQUIRED
+            $this->commands(PublishTranslaFlex::class);
+
+            // !PUBLISH PACKAGE CONFIG - OPTIONAL
+            $this->publishes([
+                __DIR__ . '/../config/config.php' => config_path('translaflex.php'),
+            ], 'config');
         }
     }
 }
